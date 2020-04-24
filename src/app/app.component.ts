@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from "./core/services/user.service";
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 @Component({
@@ -16,6 +16,8 @@ export class AppComponent {
     { src: "https://source.unsplash.com/collection/9990991"}
   ]
   constructor(private userService: UserService, private router: Router) {
+
+
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
           // Show loading indicator
@@ -37,8 +39,9 @@ export class AppComponent {
       }
   });
 
-  var docCont={contet_id:'DOC_fg95yysk21ib1qg',
-  content_sizes:['200 x 200'],
-  content_type:'img'};
-   }
+  }
+
+   ngOnInit() {
+
+     }
 }

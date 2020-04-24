@@ -22,6 +22,7 @@ import { NewsComponent } from './home/news/news.component';
 import { DrugsComponent } from './home/drugs/drugs.component';
 import { ClinicaltrialsComponent } from './home/clinicaltrials/clinicaltrials.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { DocereeAdComponent } from './doceree-ad/doceree-ad.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     NewsComponent,
     DrugsComponent,
     ClinicaltrialsComponent,
-    CarouselComponent
+    CarouselComponent,
+    DocereeAdComponent
   ],
   imports: [
     BrowserModule,
