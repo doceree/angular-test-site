@@ -19,12 +19,10 @@ export class AppComponent {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
           // Show loading indicator
-          console.log('nav start',event);
       }
 
       if (event instanceof NavigationEnd) {
           // Hide loading indicator
-          console.log('nav end' ,event);
           if( event.urlAfterRedirects == '/dashboard') {
             this.showCarousel = true;
           } else {
@@ -38,5 +36,9 @@ export class AppComponent {
           console.log(event.error);
       }
   });
+
+  var docCont={contet_id:'DOC_fg95yysk21ib1qg',
+  content_sizes:['200 x 200'],
+  content_type:'img'};
    }
 }
