@@ -23,5 +23,42 @@
     content_sizes:['200 x 200'],
     content_type:'img'};
   </script>
+
+<script>
+  var hcpContext;
+  var da = document.createElement('script');
+  da.type = 'text/javascript';
+  da.async = true;
+  da.src = 'https://dr15zo9o33078.cloudfront.net/script/render-header.js';
+  document.getElementsByTagName('head')[0].appendChild(da);
+  function docereeLogIn(userObj) {
+      if(!hcpContext){
+          hcpContext = userObj;
+          if(typeof setDocereeContext === 'function') {
+              setDocereeContext(hcpContext);
+          }
+      }
+  };
+  function docereeLogOut() {
+      document.cookie = _docereeContext+'=; Max-Age=-99999999;'; 
+  };
+  </script>
+
+  
+<script>
+
+ 
+
+  let userObj = {
+      firstName: 'Scott',  
+      lastName: 'Ames',
+      specialization: 'Anesthesiology',
+      zipCode: '11234',
+      gender: 'Male'
+  }
+
+  console.log(userObj);
+  docereeLogIn(userObj);
+</script>
 </body>
 </html>
