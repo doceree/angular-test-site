@@ -13,8 +13,8 @@ export const appRoutes: Routes = [
   {path: '', pathMatch: 'full', component: HomepageComponent},
   {path: 'login', pathMatch: 'full', component: SigninComponent},
   {path: 'register', pathMatch: 'full', component: RegisterComponent},
-  {path: 'dashboard', pathMatch: 'full', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'news', pathMatch: 'full', component: NewsComponent, canActivate: [AuthGuard]},
-  {path: 'drugs', pathMatch: 'full', component: DrugsComponent, canActivate: [AuthGuard]},
-  {path: 'trails', pathMatch: 'full', component: ClinicaltrialsComponent, canActivate: [AuthGuard]}
+  {path: 'dashboard', pathMatch: 'full', component: DashboardComponent},
+  {path: 'news', pathMatch: 'full', component: NewsComponent},
+  {path: 'drugs', pathMatch: 'full', component: DrugsComponent},
+  {path: 'trails', pathMatch: 'full', component: ClinicaltrialsComponent}
 ];
