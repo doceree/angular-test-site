@@ -14,10 +14,8 @@ export class DocereeAdComponent implements OnInit {
     console.log('first')
     this.loadScriptForDivData();
     this.loginToDoceree();
-    setTimeout(() => {
-      console.log('2nd load')
-      this.loadScriptForDivData2();
-    }, 2000);
+    console.log('2nd load')
+    this.loadScriptForDivData2();
   }
 
   public loadScript(url: string) {
@@ -28,19 +26,19 @@ export class DocereeAdComponent implements OnInit {
   }
 
   public loadScriptForDivData() {
-    const el = <HTMLDivElement> document.getElementById('DOC_fg95yysk21ib1qg');
+    const el = <HTMLDivElement> document.getElementById('DOC_frpgajk61rjp7d');
     const script = document.createElement('script');
-    script.innerText = "var docCont={contet_id:'DOC_fg95yysk21ib1qg',content_sizes:['200 x 200'],content_type:'img'};";  
+    script.innerText = "var requestedAdIds = requestedAdIds || [];requestedAdIds.push({contet_id:'DOC_frpgajk61rjp7d',content_sizes:['200 x 200'],content_type:'img'});";  
     el.appendChild(script);
-    this.loadScript('https://dev-programmatic.doceree.com/render/getJS');
+    this.loadScript('http://localhost:2007/getJS.js');
   }
 
   public loadScriptForDivData2() {
-    const el = <HTMLDivElement> document.getElementById('DOC_fg95yysk21n1dl7');
+    const el = <HTMLDivElement> document.getElementById('DOC_frpgajk627nsx9');
     const script = document.createElement('script');
-    script.innerText = "var docCont={contet_id:'DOC_fg95yysk21n1dl7',content_sizes:['468 x 60'],content_type:'img'};";  
+    script.innerText = "var requestedAdIds = requestedAdIds || [];requestedAdIds.push({contet_id:'DOC_frpgajk627nsx9',content_sizes:['250 x 250'],content_type:'img'});";  
     el.appendChild(script);
-    this.loadScript('https://dev-programmatic.doceree.com/render/getJS');
+    this.loadScript('http://localhost:2007/getJS.js');
   }
 
   public loginToDoceree() {
