@@ -7,7 +7,7 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Well-being Today';
+  title = 'Well-being Times';
   showCarousel: boolean = false;
   public slides = [
     { src: "https://source.unsplash.com/collection/9990991"},
