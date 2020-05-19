@@ -1,5 +1,181 @@
-<div fxLayout="row wrap" fxLayoutAlign="space-around start">
+<div style="padding-top: 50px;  min-height: 100vh;
+height: auto;
+margin: 0;" class="sea">
 
+    <div fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+        <div fxFlex="70" *ngIf="!cookieIndicator">
+            <mat-card style="background: #c0e6ecde;" class="example-card" [class.mat-elevation-z2]="!isActive" [class.mat-elevation-z8]="isActive">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>
+                        Country Select
+                        <mat-radio-group>
+                            <mat-radio-button style="font: 13px 'Work Sans';color: #333;padding-right: 32px;" 
+                            value="US" (change)="radioChange($event)" [checked]="country === 'US'">
+                            US
+                            </mat-radio-button>
+                            <mat-radio-button style="font: 13px 'Work Sans';color: #333;padding-right: 32px;" 
+                            value="India" (change)="radioChange($event)" [checked]="country === 'India'">
+                            India
+                            </mat-radio-button>
+                        </mat-radio-group>
+                  </mat-card-title>
+                  <mat-card-subtitle>HCP Login - {{country}}</mat-card-subtitle>
+                </mat-card-header>
+                    <form [formGroup]="docereeContextIndia" (ngSubmit)="onSubmit()" *ngIf="country === 'India'">
+        
+                        <div fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+                            <div fxLayout="column" fxLayoutAlign="space-between start">
+                                <!-- First Name -->
+                                <mat-form-field>
+                                    First Name:
+                                    <div>
+                                    <input matInput id="fname" type="text" class="custom-control-input" value="" name="fname" formControlName="fname">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+        
+                                <!-- Last Name -->
+                                <mat-form-field>
+                                    Last Name:
+                                    <div>
+                                    <input matInput id="lname" type="text" class="custom-control-input" value="" name="lname" formControlName="lname">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+        
+                                <!-- specialization -->
+                                <mat-form-field>
+                                    Specialization:
+                                    <div>
+                                    <input matInput id="specialization" type="text" class="custom-control-input" value="" name="specialization" formControlName="specialization">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
 
+                                <!-- city -->
+                                <mat-form-field>
+                                    City:
+                                    <div>
+                                        <input matInput id="city" type="text" class="custom-control-input" value="" name="city" formControlName="city">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+        
+                            </div>
+            
+                            <div fxLayout="column" fxLayoutAlign="space-between start">
+        
 
+                                <!-- mciRegistrationNumber -->
+                                <mat-form-field>
+                                    MCI RegistrationNumber:
+                                    <div>
+                                        <input matInput id="mciRegistrationNumber" type="text" class="custom-control-input" value="" name="mciRegistrationNumber" formControlName="mciRegistrationNumber">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+                                
+                                <!-- ZipCode -->
+                                <mat-form-field>
+                                    Zipcode:
+                                    <div>
+                                        <input matInput id="zipcode" type="text" class="custom-control-input" value="" name="zipcode" formControlName="zipcode">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+        
+                                <!-- Mobile -->
+                                <mat-form-field>
+                                    Mobile:
+                                    <div>
+                                        <input matInput id="mobile" type="text" class="custom-control-input" value="" name="mobile" formControlName="mobile">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+        
+                            </div>    
+                            <div fxLayout="column" fxLayoutAlign="space-between start">
+
+                                <!-- Gender -->
+                                <div>
+                                    Gender: 
+                                    <div>
+                                    <input id="male" type="radio" class="custom-control-input" value="male" name="gender" formControlName="gender">
+                                    <label class="custom-control-label" for="male">Male</label>
+                                    </div>
+                                
+                                    <div>
+                                    <input id="female" type="radio" class="custom-control-input" value="female" name="gender" formControlName="gender">
+                                    <label class="custom-control-label" for="female">Female</label>
+                                    </div>
+                                
+                                    <div>
+                                        <input id="other" type="radio" class="custom-control-input" value="other" name="gender" formControlName="gender">
+                                        <label class="custom-control-label" for="other">Other</label>
+                                    </div>       
+                                    <button mat-raised-button color="primary" type="submit">Set cookie</button>
+    
+                                </div>
+                            </div>                
+                        </div>
+        
+                    </form><!-- Form ends -->
+        
+                    <form [formGroup]="docereeContextUS" (ngSubmit)="onSubmit()" *ngIf="country === 'US'">
+        
+                        <div fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+                                <!-- NPI -->
+                                <mat-form-field>
+                                    NPI:
+                                    <div>
+                                    <input matInput id="NPI" type="text" class="custom-control-input" value="" name="NPI" formControlName="NPI">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+        
+                                <!-- Email -->
+                                <mat-form-field>
+                                    Email:
+                                    <div>
+                                    <input matInput id="Email" type="text" class="custom-control-input" value="" name="Email" formControlName="Email">
+                                    </div>
+                                </mat-form-field>
+                                <br/>
+                                <button mat-raised-button color="primary" type="submit">Set cookie</button>
+                        </div>
+                    </form><!-- Form ends -->
+              </mat-card>
+        </div>
+        <div fxFlex="30" *ngIf="cookieIndicator">
+            <mat-card style="background: #c0e6ecde;"  class="example-card" [class.mat-elevation-z2]="!isActive" [class.mat-elevation-z8]="isActive">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>
+                    Active - {{country}} 
+                  </mat-card-title>
+                  <mat-card-subtitle>_docereeContext Set</mat-card-subtitle>
+                </mat-card-header>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>HCP details</mat-label>
+                        <textarea type="text" cdkTextareaAutosize
+                        cdkAutosizeMinRows="4"
+                        cdkAutosizeMaxRows="5" matInput [value]="userObj" readonly></textarea>
+                    </mat-form-field>
+                    <br/>
+                    <div>
+                        <mat-form-field appearance="outline" *ngIf="country === 'US'">
+                            <mat-label>Hashed HCP details</mat-label>
+                            <textarea type="text" cdkTextareaAutosize
+                            cdkAutosizeMinRows="4"
+                            cdkAutosizeMaxRows="5"matInput [value]="userObjHashed" readonly></textarea>
+                        </mat-form-field>
+                    </div>
+              </mat-card>
+        </div>
+    
+    </div>
+    
 </div>
+

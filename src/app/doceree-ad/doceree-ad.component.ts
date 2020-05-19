@@ -13,7 +13,6 @@ export class DocereeAdComponent implements OnInit {
   ngOnInit() {
     console.log('first')
     this.loadScriptForDivData();
-    this.loginToDoceree();
     setTimeout(() => {
       console.log('2nd load')
       this.loadScriptForDivData2();
@@ -44,23 +43,10 @@ export class DocereeAdComponent implements OnInit {
   }
 
   public loginToDoceree() {
-    const body = <HTMLDivElement> document.body;
-    let userObj = {
-      firstName: 'Scott',  
-      lastName: 'Ames',
-      specialization: 'Anesthesiology',
-      zipCode: '11234',
-      gender: 'Male'
-  }
-
-  const el = document.createElement('script');
-  el.innerText = "docereeLogIn(" + JSON.stringify(userObj) + ");"
-  body.appendChild(el);
-  console.log('appending login')
+    console.log('logging in')
   }
 
   // script.innerText = 
   //   script.innerText = '';
-  
 
 }

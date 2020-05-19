@@ -15,5 +15,19 @@
 }
 
 .example-form{
-  max-width: 400px;
+  max-width: 800px;
+}
+
+.example-card {
+  width: 800px;
+  height: 520px;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/stayhome.jpg');
+  background-size: cover;
+}
+
+.sea{
+  background: url('../../../assets/sea-shore.jpg')
 }
