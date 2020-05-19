@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { appRoutes } from './home/routes';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { DrugsComponent } from './home/drugs/drugs.component';
 import { ClinicaltrialsComponent } from './home/clinicaltrials/clinicaltrials.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DocereeAdComponent } from './doceree-ad/doceree-ad.component';
+import {MatCardModule, MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -35,19 +37,23 @@ import { DocereeAdComponent } from './doceree-ad/doceree-ad.component';
     DrugsComponent,
     ClinicaltrialsComponent,
     CarouselComponent,
-    DocereeAdComponent
+    DocereeAdComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatCardModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule  
   ],
   providers: [ UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

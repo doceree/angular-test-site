@@ -7,26 +7,26 @@
   <div fxFlex fxLayout fxLayoutAlign="space-between end">
       <div>
         <a routerLink="/" style="font-size: 24px; text-decoration: none; color: rgba(233, 237, 240, 0.74);">
-          <img src="https://storage.googleapis.com/doc_sourcefiles/ico/icons8-ios-photos-50.png" style="padding-bottom: 4px;" /> Well-being Today
+          <img src="https://storage.googleapis.com/doc_sourcefiles/ico/icons8-ios-photos-50.png" style="padding-bottom: 4px;" /> Well-being Times
         </a>
       </div>
 
       <div class="container" [fxHide.xs]="true">
         <ul>
           <li><a mat-button [routerLink]="['/']">HOME</a></li>
-          <li><a mat-button [routerLink]="['/news']">News</a></li>
-          <li><a mat-button [routerLink]="['/drugs']">Drugs</a></li>
-          <li><a mat-button [routerLink]="['/trails']">Clinical Trails</a></li>
+          <li><a mat-button [routerLink]="['/news']">Tests</a></li>
+          <li><a mat-button [routerLink]="['/drugs']">New Vaccines</a></li>
+          <li><a mat-button [routerLink]="['/trails']">Test Trials</a></li>
         </ul>
       </div>
-
+      <div style="position: relative;
+      bottom: 27px;
+      right: 21px;">
+        <td *ngIf="!cookieIndicator"><span class ="dot dot-red"></span></td>
+        <td *ngIf="cookieIndicator"><span class ="dot dot-green"></span></td>
+      </div>
+      <button mat-raised-button color="accent" style="bottom: 29px;" (click)="clearDocereeCookies()">Clear cookie</button>
   </div>
 </mat-toolbar>
 
-<app-doceree-ad></app-doceree-ad>
-
-<div class="containerSlider" *ngIf="showCarousel">
-  <app-carousel [slides]="slides"></app-carousel>
-</div>
 <router-outlet></router-outlet>
-

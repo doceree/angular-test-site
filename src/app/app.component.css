@@ -78,3 +78,19 @@ mat-toolbar{
     width: 500px;
     padding: 2em;
   }
+
+  .dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-red {
+    background-color: crimson;
+  }
+  .dot-green {
+    background-color: #0fef2b;;
+  }
+  .dot-yellow {
+    background-color: yellow;
+  }

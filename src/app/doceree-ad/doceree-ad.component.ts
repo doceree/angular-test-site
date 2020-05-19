@@ -11,8 +11,12 @@ export class DocereeAdComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('first')
     this.loadScriptForDivData();
-    this.loginToDoceree();
+    setTimeout(() => {
+      console.log('2nd load')
+      this.loadScriptForDivData2();
+    }, 2000);
   }
 
   public loadScript(url: string) {
@@ -30,24 +34,19 @@ export class DocereeAdComponent implements OnInit {
     this.loadScript('https://dev-programmatic.doceree.com/render/getJS');
   }
 
-  public loginToDoceree() {
-    const body = <HTMLDivElement> document.body;
-    let userObj = {
-      firstName: 'Scott',  
-      lastName: 'Ames',
-      specialization: 'Anesthesiology',
-      zipCode: '11234',
-      gender: 'Male'
+  public loadScriptForDivData2() {
+    const el = <HTMLDivElement> document.getElementById('DOC_fg95yysk21n1dl7');
+    const script = document.createElement('script');
+    script.innerText = "var docCont={contet_id:'DOC_fg95yysk21n1dl7',content_sizes:['468 x 60'],content_type:'img'};";  
+    el.appendChild(script);
+    this.loadScript('https://dev-programmatic.doceree.com/render/getJS');
   }
 
-  const el = document.createElement('script');
-  el.innerText = "docereeLogIn(" + JSON.stringify(userObj) + ");"
-  body.appendChild(el);
-  console.log('appending login')
+  public loginToDoceree() {
+    console.log('logging in')
   }
 
   // script.innerText = 
   //   script.innerText = '';
-  
 
 }
