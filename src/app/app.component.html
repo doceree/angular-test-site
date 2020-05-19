@@ -19,14 +19,14 @@
           <li><a mat-button [routerLink]="['/trails']">Test Trials</a></li>
         </ul>
       </div>
-
+      <div style="position: relative;
+      bottom: 27px;
+      right: 21px;">
+        <td *ngIf="!cookieIndicator"><span class ="dot dot-red"></span></td>
+        <td *ngIf="cookieIndicator"><span class ="dot dot-green"></span></td>
+      </div>
+      <button mat-raised-button color="accent" style="bottom: 29px;" (click)="clearDocereeCookies()">Clear cookie</button>
   </div>
 </mat-toolbar>
 
-<app-doceree-ad></app-doceree-ad>
-
-<div class="containerSlider" *ngIf="showCarousel">
-  <app-carousel [slides]="slides"></app-carousel>
-</div>
 <router-outlet></router-outlet>
-
