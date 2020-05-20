@@ -5,8 +5,8 @@
   "projects": {
     "docapp": {
       "projectType": "application",
-      "schematics": {      
-          "@schematics/angular:component": {
+      "schematics": {
+        "@schematics/angular:component": {
           "styleext": "scss"
         }
       },
@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "docapp"
+    }
+  },
+  "defaultProject": "docapp",
+  "cli": {
+    "analytics": false
+  }
 }

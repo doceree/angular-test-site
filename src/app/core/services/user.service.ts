@@ -16,6 +16,13 @@ export class UserService {
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
+  loadScript(url: string) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.src = url;
+    body.appendChild(script);
+  }
+
   getUserPayload() {
     var token = this.getToken();
     if(token) {
